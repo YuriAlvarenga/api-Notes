@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  # Serviço para o aplicativo
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    restart: always
+    environment:
+      URL_DATABASE: 'postgresql://postgres:221094@db/db_todo'
+
+
+  # Serviço para o banco de dados PostgreSQL
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: db_todo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 221094
+    restart: always
+    ports:
+      - "5432:5432"
