@@ -13,7 +13,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base: DeclarativeMeta = declarative_base()
 
-def criar_bd():
+def create_bd():
     Base.metadata.create_all(bind=engine)
 
 def get_db():

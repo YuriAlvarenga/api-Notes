@@ -4,6 +4,9 @@ from routes import route_auth
 from routes import route_user
 from routes import route_task
 
+
+
+
 app = FastAPI()
 
 
